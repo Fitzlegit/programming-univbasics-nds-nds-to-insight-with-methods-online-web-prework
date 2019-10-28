@@ -8,10 +8,12 @@ require 'pp'
 
 def directors_totals(nds)
   result = {}
-  index = 0
-  director = nds[index][:name]
-  while index < nds.length do
-    result[director]
+  name_index = 0
+  director = nds[name_index][:name]
+  while name_index < nds.length do
+    result[director] += gross_for_director(director_data)
+    
+    name_index += 1
   end
   
   p  result
@@ -21,15 +23,12 @@ end
 # Find a way to accumulate the :worldwide_grosses and return that Integer
 # using director_data as input
 def gross_for_director(director_data)
-
-  index = 0
+  mov_index = 0
   gross_total = 0
-  while index < director_data[:movies].length do
-    gross_total += director_data[:movies][index][:worldwide_gross]
+  while mov_index < director_data[:movies].length do
+    gross_total += director_data[:movies][mov_index][:worldwide_gross]
   
-    index += 1
+    mov_index += 1
   end
-
   gross_total
-  
 end
