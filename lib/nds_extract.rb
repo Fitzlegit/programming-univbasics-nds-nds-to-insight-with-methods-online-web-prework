@@ -9,15 +9,14 @@ require 'pry'
 
 def directors_totals(nds)
   result = {}
-  name_index = 0
-  result[director] = 0
-  while name_index < nds.length do
+  director_index = 0
+  while director_index < nds.length do
     
-    director = nds[name_index][:name]
+    director = nds[director_index]
     
-    result[director] += gross_for_director(director)
+    result[director[:name]] += gross_for_director(director)
     
-    name_index += 1
+    director_index += 1
   end
   
   result
