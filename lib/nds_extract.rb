@@ -10,9 +10,9 @@ def directors_totals(nds)
   result = {}
   name_index = 0
   director = nds[name_index][:name]
-  result[director] = 0
+  result = []
 
-  result[director] << gross_for_director(directors_database)
+  result += gross_for_director(directors_database)
   
   p  result
 end
