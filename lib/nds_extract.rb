@@ -1,5 +1,6 @@
 require 'directors_database'
 require 'pp'
+require 'pry'
 
 # Write a method that, given an NDS creates a new Hash
 # The return value should be like:
@@ -12,6 +13,7 @@ def directors_totals(nds)
   director = nds[name_index][:name]
   result[director] = 0
   
+  binding.pry
   p gross_for_director(gross_total)
   
   p  result
