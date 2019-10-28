@@ -14,7 +14,7 @@ def directors_totals(nds)
     
     director = nds[director_index]
     
-    result[director[:name]] += gross_for_director(director)
+    result[director[:name]] = gross_for_director(director)
     
     director_index += 1
   end
